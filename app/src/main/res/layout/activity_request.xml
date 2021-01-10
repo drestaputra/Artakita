@@ -64,16 +64,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="bottom"
+
                         android:textColorHint="@color/colorPrimaryDark">
 
                         <EditText
-                            android:id="@+id/EtNoHp"
+                            android:id="@+id/EtUsername"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:background="@drawable/bg_gradient_white"
                             android:fontFamily="@font/lato"
-                            android:hint="Nomor HP"
-                            android:inputType="number"
+                            android:hint="Username"
+                            android:inputType="text"
                             android:paddingStart="8dp"
                             android:paddingTop="8dp"
                             android:paddingEnd="12dp"
@@ -89,23 +90,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="bottom"
-                        android:textColorHint="@color/colorPrimary"
-                        app:passwordToggleEnabled="true">
+
+                        android:textColorHint="@color/colorPrimaryDark">
 
                         <EditText
-                            android:id="@+id/EtConfPassword"
+                            android:id="@+id/EtEmail"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:background="@drawable/bg_gradient_white"
-                            android:fontFamily="@font/asap_bold"
-                            android:hint="Ulangi password"
-                            android:inputType="textPassword"
-                            android:paddingStart="4dp"
+                            android:fontFamily="@font/lato"
+                            android:hint="Email"
+                            android:inputType="text"
+                            android:paddingStart="8dp"
                             android:paddingTop="8dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="8dp"
                             android:textColor="#585858"
-                            android:textColorHighlight="@color/colorPrimary"
+                            android:textColorHighlight="@color/colorPrimaryDark"
                             android:textColorHint="#247F8D"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -115,17 +116,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="bottom"
-
                         android:textColorHint="@color/colorPrimaryDark">
 
                         <EditText
-                            android:id="@+id/EtUsername"
+                            android:id="@+id/EtNoHp"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:background="@drawable/bg_gradient_white"
                             android:fontFamily="@font/lato"
-                            android:hint="Username"
-                            android:inputType="text"
+                            android:hint="Nomor HP"
+                            android:inputType="number"
                             android:paddingStart="8dp"
                             android:paddingTop="8dp"
                             android:paddingEnd="12dp"
@@ -167,27 +167,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="bottom"
-
-                        android:textColorHint="@color/colorPrimaryDark">
+                        android:textColorHint="@color/colorPrimary"
+                        app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/EtEmail"
+                            android:id="@+id/EtConfPassword"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:background="@drawable/bg_gradient_white"
-                            android:fontFamily="@font/lato"
-                            android:hint="Email"
-                            android:inputType="text"
-                            android:paddingStart="8dp"
+                            android:fontFamily="@font/asap_bold"
+                            android:hint="Ulangi password"
+                            android:inputType="textPassword"
+                            android:paddingStart="4dp"
                             android:paddingTop="8dp"
                             android:paddingEnd="12dp"
                             android:paddingBottom="8dp"
                             android:textColor="#585858"
-                            android:textColorHighlight="@color/colorPrimaryDark"
+                            android:textColorHighlight="@color/colorPrimary"
                             android:textColorHint="#247F8D"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
 
 

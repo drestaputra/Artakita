@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
@@ -11,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,11 +47,13 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 public class HomeFragment extends Fragment {
-    private ViewPager viewPager,viewPagerPaket;
+    private ViewPager viewPager;
+    private RecyclerView viewPagerPaket;
     private AdapterSlider adapter;
     private AdapterPaket adapterPaket;
     private PrefManager prefManager;
     private ShimmerFrameLayout mShimmerViewContainerPaket,mShimmerViewContainerSlider;
+    private GridLayoutManager linearLayoutManager;
     private LinearLayout LlNasabah,LlOperBerkas,LlInformasiProgram,LlSimulasi,LlPengaduan,LlJadwal,LlAngsur,LlTransaksi,LlLihatSetoran;
 
     public HomeFragment() {
@@ -224,9 +230,11 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<PaketPojoResponse> call, Response<PaketPojoResponse> response) {
                 if (response.body()!=null){
                     if (response.body().getStatus()==200){
-                        adapterPaket = new AdapterPaket(response.body().getData(), Objects.requireNonNull(getContext()));
+                        adapterPaket = new AdapterPaket(getContext(),response.body().getData());
+                        linearLayoutManager = new GridLayoutManager(getContext(),3);
+                        viewPagerPaket.setLayoutManager(linearLayoutManager);
+                        viewPagerPaket.setItemAnimator(new DefaultItemAnimator());
                         viewPagerPaket.setAdapter(adapterPaket);
-                        viewPagerPaket.setPadding(0, 0, 30, 0);
                     }
                 }
                 mShimmerViewContainerPaket.stopShimmerAnimation();

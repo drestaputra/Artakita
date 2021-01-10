@@ -200,7 +200,8 @@
                                     android:fontFamily="@font/acme"
                                     android:gravity="end"
                                     android:text="Lihat semua"
-                                    android:textColor="@color/colorPrimary" />
+                                    android:textColor="@color/colorPrimary"
+                                    android:visibility="gone" />
 
                             </LinearLayout>
 
@@ -213,12 +214,13 @@
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1">
 
-                            <androidx.viewpager.widget.ViewPager
+                            <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/viewPagerPaket"
                                 android:layout_width="match_parent"
                                 android:layout_height="75dp"
                                 android:clipToPadding="false"
                                 android:foregroundGravity="center"
+                                android:isScrollContainer="false"
                                 android:minHeight="200dp"
                                 android:overScrollMode="never" />
                             <com.facebook.shimmer.ShimmerFrameLayout
