@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.NumberFormat;
@@ -71,7 +72,7 @@ public class AdapterPaket extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 Locale localeID = new Locale("in", "ID");
                 NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
                 Vh.TxvNamaPaket.setText(models.getNama_paket());
-                Vh.TxvDeskripsiPaket.setText(models.getDeskripsi_paket());
+                Vh.TxvDeskripsiPaket.setText(HtmlCompat.fromHtml(models.getDeskripsi_paket(),HtmlCompat.FROM_HTML_MODE_LEGACY));
                 Vh.TxvHargaPaket.setText(formatRupiah.format(Float.parseFloat(models.getHarga_paket())));
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

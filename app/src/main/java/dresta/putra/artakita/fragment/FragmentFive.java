@@ -18,6 +18,7 @@ import dresta.putra.artakita.kolektor.ProfilKolektorActivity;
 import dresta.putra.artakita.login.LoginActivity;
 import dresta.putra.artakita.nasabah.NasabahActivity;
 import dresta.putra.artakita.owner.ProfilKoperasiActivity;
+import dresta.putra.artakita.request.HistoryRequestActivity;
 
 public class FragmentFive extends Fragment {
 
@@ -36,6 +37,7 @@ public class FragmentFive extends Fragment {
         LinearLayout LlNasabah = view.findViewById(R.id.LlNasabah);
         LinearLayout LlLogin = view.findViewById(R.id.LlLogin);
         LinearLayout LlAbout = view.findViewById(R.id.LlAbout);
+        LinearLayout LlRequest = view.findViewById(R.id.LlRequest);
         TextView TxvUsername = view.findViewById(R.id.TxvUsername);
         final PrefManager prefManager= new PrefManager(Objects.requireNonNull(getActivity()).getApplicationContext());
         LlLogout.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +80,13 @@ public class FragmentFive extends Fragment {
             public void onClick(View v) {
                 Intent IProfilKoperasi = new Intent(getContext(), ProfilKoperasiActivity.class);
                 startActivity(IProfilKoperasi);
+            }
+        });
+        LlRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent IHistory = new Intent(getContext(), HistoryRequestActivity.class);
+                startActivity(IHistory);
             }
         });
         if (!prefManager.isKolektorLoggedIn()){

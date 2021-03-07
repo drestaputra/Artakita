@@ -7,6 +7,8 @@ public class PaketPojo {
     String id_paket;
     @SerializedName("nama_paket")
     String nama_paket;
+    @SerializedName("durasi_paket")
+    String durasi_paket;
     @SerializedName("deskripsi_paket")
     String deskripsi_paket;
     @SerializedName("harga_paket")
@@ -14,9 +16,10 @@ public class PaketPojo {
     @SerializedName("status_paket")
     String status_paket;
 
-    public PaketPojo(String id_paket, String nama_paket, String deskripsi_paket, String harga_paket, String status_paket) {
+    public PaketPojo(String id_paket, String nama_paket, String durasi_paket, String deskripsi_paket, String harga_paket, String status_paket) {
         this.id_paket = id_paket;
         this.nama_paket = nama_paket;
+        this.durasi_paket = durasi_paket;
         this.deskripsi_paket = deskripsi_paket;
         this.harga_paket = harga_paket;
         this.status_paket = status_paket;
@@ -63,5 +66,13 @@ public class PaketPojo {
 
     public void setStatus_paket(String status_paket) {
         this.status_paket = status_paket;
+    }
+
+    public String getDurasi_paket() {
+        return durasi_paket;
+    }
+
+    public void setDurasi_paket(String durasi_paket) {
+        this.durasi_paket = durasi_paket;
     }
 }

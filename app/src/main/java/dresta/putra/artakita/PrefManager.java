@@ -3,6 +3,7 @@ package dresta.putra.artakita;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -20,6 +21,7 @@ public class PrefManager {
     SharedPreferences.Editor editor;
      static Context _context;
      private static final String USERNAME = "username";
+     private static final String DEVICE_ID = "device_id";
      private static final String PASSWORD = "password";
      private static final String LAST_LOGIN = "LAST_LOGIN";
      private static final String NO_PEGAWAI = "no_pegawai";
@@ -121,6 +123,17 @@ public class PrefManager {
     public String LoggedInKolektorUsername() {
         SharedPreferences sharedPreferences = _context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(USERNAME, null);
+    }
+    public String getDeviceId(){
+        SharedPreferences sharedPreferences = _context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(DEVICE_ID, null);
+
+    }
+    public  void setDeviceId(String deviceId){
+        SharedPreferences sharedPreferences = _context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(DEVICE_ID, deviceId);
+        editor.commit();
     }
 
 

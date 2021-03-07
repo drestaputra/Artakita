@@ -18,8 +18,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".paket.RequestActivty"></activity>
-        <activity android:name=".paket.RequestActivity" />
+        <activity android:name=".request.HistoryRequestActivity"></activity>
+        <activity
+            android:name=".paket.RequestActivty"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".oper_berkas.OperBerkasNasabahActivity" />
 
         <service

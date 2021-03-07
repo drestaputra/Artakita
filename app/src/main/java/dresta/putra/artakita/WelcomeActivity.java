@@ -10,6 +10,8 @@ import android.os.Bundle;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.provider.Settings;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -93,6 +95,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // mengecek lauch activity - sebelum memanggil setContentView()
         prefManager = new PrefManager(this);
+        String device_id = android.provider.Settings.System.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+        prefManager.setDeviceId(device_id);
         if (!prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
